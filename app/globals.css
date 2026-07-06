@@ -1,0 +1,196 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-geist-sans), 'Geist Fallback';
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  /* Premium Navy and Amber Gold coaching palette */
+  --background: #ffffff;
+  --foreground: #0b1d33;
+  --card: #ffffff;
+  --card-foreground: #0b1d33;
+  --popover: #ffffff;
+  --popover-foreground: #0b1d33;
+  /* Deep Navy Blue Primary */
+  --primary: #0b2b40;
+  --primary-foreground: #ffffff;
+  --primary-press: #061c2b;
+  --primary-tint: #16405b;
+  /* Premium Gold/Amber Accent */
+  --secondary: #e2a54a;
+  --secondary-foreground: #0b2b40;
+  /* Cream Canvas - warm off-white for hero/about sections */
+  --canvas-cream: #faf6f0;
+  --canvas-lavender: #f0f6fa;
+  /* Muted & helpers */
+  --muted: #f4f6f8;
+  --muted-foreground: #5a6e7f;
+  /* Accent Sky/Teal */
+  --accent: #4ba3c3;
+  --accent-foreground: #ffffff;
+  --accent-hover: #378dae;
+  /* Semantic */
+  --destructive: #cc4117;
+  --semantic-success: #007a5a;
+  --border: #e2e8f0;
+  --input: #f8fafc;
+  --ring: #0b2b40;
+  --chart-1: #0b2b40;
+  --chart-2: #e2a54a;
+  --chart-3: #4ba3c3;
+  --chart-4: #faf6f0;
+  --chart-5: #f0f6fa;
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0.001 0);
+  --sidebar-foreground: oklch(0.22 0.008 264);
+  --sidebar-primary: oklch(0.45 0.3 280);
+  --sidebar-primary-foreground: oklch(0.98 0.001 0);
+  --sidebar-accent: oklch(0.6 0.25 280);
+  --sidebar-accent-foreground: oklch(0.98 0.001 0);
+  --sidebar-border: oklch(0.92 0.02 280);
+  --sidebar-ring: oklch(0.45 0.3 280);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #07101e;
+  --foreground: #f8fafc;
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+  --primary: #38bdf8;
+  --primary-foreground: #07101e;
+  --secondary: #e2a54a;
+  --secondary-foreground: #07101e;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #4ba3c3;
+  --accent-foreground: #07101e;
+  --destructive: #ff6b5b;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #38bdf8;
+  --chart-1: #38bdf8;
+  --chart-2: #e2a54a;
+  --chart-3: #4ba3c3;
+  --chart-4: #1e293b;
+  --chart-5: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --background: #07101e;
+    --foreground: #f8fafc;
+    --card: #0f172a;
+    --card-foreground: #f8fafc;
+    --popover: #0f172a;
+    --popover-foreground: #f8fafc;
+    --primary: #38bdf8;
+    --primary-foreground: #07101e;
+    --secondary: #e2a54a;
+    --secondary-foreground: #07101e;
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    --accent: #4ba3c3;
+    --accent-foreground: #07101e;
+    --destructive: #cc4117;
+    --border: #1e293b;
+    --input: #1e293b;
+    --ring: #38bdf8;
+    --chart-1: #38bdf8;
+    --chart-2: #e2a54a;
+    --chart-3: #4ba3c3;
+    --chart-4: #1e293b;
+    --chart-5: #0f172a;
+    --sidebar: #0f172a;
+    --sidebar-foreground: #f8fafc;
+    --sidebar-primary: #38bdf8;
+    --sidebar-primary-foreground: #07101e;
+    --sidebar-accent: #4ba3c3;
+    --sidebar-accent-foreground: #07101e;
+    --sidebar-border: #1e293b;
+    --sidebar-ring: #38bdf8;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans bg-background;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    @apply bg-gradient-to-br from-primary/5 via-background to-accent/5;
+  }
+
+  .glass-effect {
+    @apply bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10;
+  }
+
+  .premium-text {
+    @apply text-balance font-medium tracking-tight;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 bg-primary text-primary-foreground hover:scale-105 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 border-2 border-primary text-primary hover:bg-primary/5 active:scale-95;
+  }
+}
